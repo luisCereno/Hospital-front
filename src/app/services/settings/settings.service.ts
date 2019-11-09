@@ -22,7 +22,6 @@ export class SettingsService {
   //Funcion que guarda el tema en el local storage
   guardarAjustes(){
 
-    console.log('Se guardo en el ls');
     localStorage.setItem('ajustes', JSON.stringify( this.ajustes ));  
 
   }
@@ -33,13 +32,11 @@ export class SettingsService {
     if (localStorage.getItem('ajustes')) {
 
       this.ajustes = JSON.parse( localStorage.getItem('ajustes'));
-      console.log('Cargando ajuste');
 
       this.aplicarTema( this.ajustes.tema );
       
     } else{
 
-      console.log('Cargando tema por defecto');
       this.aplicarTema( this.ajustes.tema );
 
     }
